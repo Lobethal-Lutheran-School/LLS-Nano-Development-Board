@@ -1,6 +1,8 @@
 # LLS-Nano-Development-Board
 A development board for the Arduino Nano
 
+![LLS Development Board](Nano-Development-Board-Alive.jpg)
+
 Schematic and design files for a development board that can be used to teach coding with the Arduino IDE.
 
 The design licence is the TAPR Open Hardware Licence
