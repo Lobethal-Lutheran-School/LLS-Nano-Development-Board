@@ -1,10 +1,3 @@
-//
-// A simple sketch to test the LLS-Nano-Development-Board hardware v1.0
-// 
-// Licence GPL v2.0
-// Copyright Dr Erich S. Heinzle
-//
-
 void setup() {
   // put your setup code here, to run once:
   pinMode(2, OUTPUT);
@@ -18,8 +11,8 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   int sweepDirection = 1;
+  int sweepSpeed = analogRead(A7);
   while (analogRead(A1) > 500) {
-    int sweepSpeed = analogRead(A7);
     int sweepChange = analogRead(A0) < 500;
     if (sweepChange)
       sweepDirection = 1 - sweepDirection;
@@ -29,6 +22,7 @@ void loop() {
         delay(sweepSpeed);
         digitalWrite(i, LOW);
         delay(sweepSpeed);
+        sweepSpeed = analogRead(A7);
       }
     } else {
       for (int i = 7; i > 1; i--) {
@@ -36,6 +30,7 @@ void loop() {
         delay(sweepSpeed);
         digitalWrite(i, LOW);
         delay(sweepSpeed);
+        sweepSpeed = analogRead(A7);
       }
     }
   }
